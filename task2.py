@@ -1,20 +1,20 @@
-def typeBasedTransformer(**kwargs):
-    transformed = {}
-    for A, B in kwargs.items():
+def typeBasedTransformer(**zaripov):
+    trans = {}
+    for A, B in zaripov.items():
         if isinstance(B, (int, float)):
-            transformed[A] = B ** 2
+            trans[A] = B ** 2
         elif isinstance(B, str):
-            transformed[A] = B[::-1]
+            trans[A] = B[::-1]
         elif isinstance(B, bool):
-            transformed[A] = not B
+            trans[A] = not B
         elif isinstance(B, (list, tuple)):
-            transformed[A] = B[::-1]
+            trans[A] = B[::-1]
         elif isinstance(B, dict):
             try:
-                transformed[A] = {v: k for k, v in B.items()}
+                trans[A] = {v: k for k, v in B.items()}
             except TypeError:
-                transformed[A] = B
+                trans[A] = B
         else:
-            transformed[A] = B
-    return transformed
+            trans[A] = B
+    return trans
 
