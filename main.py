@@ -1,5 +1,6 @@
 from task1 import kwargsAcceptFun
 from task2 import typeBasedTransformer
+from task3 import filterGreaterThan
 
 def main():
     # Task 1
@@ -8,7 +9,7 @@ def main():
 
     # Task 2 
     print("\nTask 2 Output:")
-    result = typeBasedTransformer(
+    result2 = typeBasedTransformer(
         number=4,
         text="Yes, worked",
         is_active=True,
@@ -17,7 +18,12 @@ def main():
         data={"a": 1, "b": 2},
         unsupported_obj=set([1, 2, 3])
     )
-    print(result)
+    print(result2)
+
+    # Task 3 
+    print("\nTask 3 Output:")
+    result3 = filterGreaterThan(10, A=5, B=15, C=25, text="Yes, worked", D=3.5)
+    print(result3)
 
 if __name__ == "__main__":
     main()
