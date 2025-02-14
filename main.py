@@ -27,5 +27,4 @@ if __name__ == "__main__":
     funx()
     func()
 
-    transformed = typeBasedTransformer(A=5, B="Me", C=True, D=[1, 2, 3], E={'a': 1, 'b': 2})
-    print(transformed)
+   
