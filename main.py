@@ -1,29 +1,31 @@
-from task1 import kwargsAcceptFun
+import random
+from task1 import decorator_1
 from task2 import typeBasedTransformer
-from task3 import filterGreaterThan
 
-def main():
-    # Task 1
-    print("Task 1 Output:")
-    kwargsAcceptFun(A="Me", B=20, country="Urgench")
+@decorator_1
+def func():
+    print("I am ready to Start")
+    finish = 0
+    n = random.randint(10, 751)
+    for i in range(n):
+        finish += (i ** 2)
 
-    # Task 2 
-    print("\nTask 2 Output:")
-    result2 = typeBasedTransformer(
-        number=4,
-        text="Yes, worked",
-        is_active=True,
-        items=[1, 2, 3],
-        coordinates=(10, 20),
-        data={"a": 1, "b": 2},
-        unsupported_obj=set([1, 2, 3])
-    )
-    print(result2)
-
-    # Task 3 
-    print("\nTask 3 Output:")
-    result3 = filterGreaterThan(10, A=5, B=15, C=25, text="Yes, worked", D=3.5)
-    print(result3)
+@decorator_1
+def funx(n=2, m=5):
+    print("I am ready to do serious stuff")
+    mval = float('-inf')
+    n = random.randint(10, 751)
+    res = [pow(i, 2) for i in range(n)]
+    for i in res:
+        if i > mval:
+            mval = i
 
 if __name__ == "__main__":
-    main()
+    func()
+    funx()
+    func()
+    funx()
+    func()
+
+    transformed = typeBasedTransformer(A=5, B="Me", C=True, D=[1, 2, 3], E={'a': 1, 'b': 2})
+    print(transformed)
